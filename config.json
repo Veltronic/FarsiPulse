@@ -1,5 +1,4 @@
 {
-  "_name_or_path": "HooshvareLab/bert-base-parsbert-uncased",
   "architectures": [
     "BertModel"
   ],
