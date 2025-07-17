@@ -1,6 +1,3 @@
-# FarsiPulse
-FarsiPulse by Voltronic: AI-driven sentiment analysis for Persian. Understand emotions (positive, negative, neutral) in Farsi texts. Unlocks insights into public sentiment. Open-source Persian NLP.
-
 FarsiPulse: Advanced Sentiment Analysis Tool for the Persian Language
 FarsiPulse is an innovative project by the Voltronic team, focusing on sentiment analysis in Persian texts. Leveraging advanced Artificial Intelligence models, this tool can identify and categorize the emotions behind Persian comments, reviews, and general texts (positive, negative, neutral). FarsiPulse helps businesses, researchers, and developers gain deeper insights into Persian public opinion. This project represents a significant step in the development of Persian Natural Language Processing (NLP) and is made available to the community as an open-source initiative.
 
@@ -18,18 +15,18 @@ To set up the FarsiPulse project locally, follow these steps:
 
 Clone the Repository:
 
-git clone https://github.com/VoltronicTeam/FarsiPulse.git
-cd FarsiPulse
+`git clone https://github.com/VoltronicTeam/FarsiPulse.git
+cd FarsiPulse`
 
 Create a Virtual Environment (Optional but Recommended):
 
-python -m venv venv
-source venv/bin/activate  # For Linux/macOS
-# venv\Scripts\activate   # For Windows
+`python -m venv venv
+source venv/bin/activate  # For Linux/macOS`
+`# venv\Scripts\activate   # For Windows`
 
 Install Dependencies:
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 (Your requirements.txt file should include: pandas, scikit-learn, datasets, transformers, torch, accelerate.)
 
@@ -37,20 +34,19 @@ Usage
 Once installed, you can use the trained model for sentiment analysis.
 
 Loading the Model and Tokenizer:
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+`from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
-
 model_path = "./voltronic_sentiment_model" # Path where your model is saved
 tokenizer = AutoTokenizer.from_pretrained(model_path)
-model = AutoModelForSequenceClassification.from_pretrained(model_path)
+model = AutoModelForSequenceClassification.from_pretrained(model_path)`
 
 Analyzing Sentiment of a Text:
-def predict_sentiment(text):
+`def predict_sentiment(text):
     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=128)
     with torch.no_grad():
         outputs = model(**inputs)
     logits = outputs.logits
-    predictions = torch.argmax(logits, dim=-1)
+    predictions = torch.argmax(logits, dim=-1)`
     
     # Map numerical labels to text labels
     # IMPORTANT: Adjust this map based on the actual labels (0, 1, 2) in your dataset.
@@ -59,14 +55,13 @@ def predict_sentiment(text):
     
     return sentiment_map[predictions.item()]
 
-# Example Usage
+`# Example Usage
 text_to_analyze = "این غذا واقعا خوشمزه بود و از کیفیتش راضی بودم." # This food was really delicious and I was satisfied with its quality.
 sentiment = predict_sentiment(text_to_analyze)
 print(f"Text: \"{text_to_analyze}\"\nSentiment: {sentiment}")
-
 text_to_analyze_negative = "متاسفانه کیفیت غذا خیلی پایین بود و سرد به دستم رسید." # Unfortunately, the food quality was very low and it arrived cold.
 sentiment_negative = predict_sentiment(text_to_analyze_negative)
-print(f"Text: \"{text_to_analyze_negative}\"\nSentiment: {sentiment_negative}")
+print(f"Text: \"{text_to_analyze_negative}\"\nSentiment: {sentiment_negative}")`
 
 Dataset
 This model has been trained on the Snappfood Persian Sentiment Analysis dataset. This dataset includes user comments from Snappfood along with their sentiment labels (positive, negative, neutral).
