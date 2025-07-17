@@ -74,7 +74,7 @@ The model used in FarsiPulse is based on the BERT architecture, specifically the
 Contributors
 This project is developed by the Voltronic team:
 
-Alan Jafari (Founder, AI & Deep Learning Specialist, Project Manager)
+Alan Jafari (Founder, AI & Deep Learning Specialist, Project Manager, Front-end updater)
 
 Mohammad (Frontend Developer, HTML, CSS, Tailwind CSS)
 
@@ -84,4 +84,4 @@ License
 This project is released under the MIT License. See the LICENSE file for more details.
 
 Acknowledgments
-We extend our gratitude to Soheil Tehranipour for providing the Snappfood Persian Sentiment Analysis dataset and to the HooshvareLab team for their pre-trained Persian BERT model.
+We extend our gratitude to Soheil Tehranipour for providing the Snappfood Persian Sentiment Analysis dataset.
