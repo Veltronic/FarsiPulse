@@ -10,7 +10,7 @@ CORS(app)
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-MODEL_DIR = r"C:\Users\Alan\Desktop\sentence-transformer-parsbert-fa"
+MODEL_DIR = r""
 
 tokenizer = None
 model = None
